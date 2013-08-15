@@ -11,6 +11,10 @@ package net.flashpunk.utils
 	/** Provides atlased texture support. */
 	public class TextureAtlas 
 	{
+		/** Construct a new TextureAtlas
+		 * @param	texture The source texture for the TextureAtlas.
+		 * @param	atlas XML describing the textures contained within the TextureAtlas.
+		 */
 		public function TextureAtlas(texture:*, atlas:*) 
 		{
 			// Get the BitmapData.
