@@ -1,4 +1,4 @@
-package net.flashpunk.utils 
+package net.flashpunk.utils
 {
 	import flash.events.MouseEvent;
 	import net.flashpunk.graphics.Text;
@@ -30,13 +30,19 @@ package net.flashpunk.utils
 		private var _over:uint;
 		private var _color:uint;
 		
-		public function Button(x:Number=0, y:Number=0, width:int=0, height:int=0, callback:Function=null)
+		public function Button(text:String,color:uint=0xffffff,over:uint=0xd8d8d8,x:Number=0, y:Number=0, width:int=0, height:int=0, callback:Function=null)
 		{
 			
-			setHitbox(width,height);
+			_text = new Text(text, x, y);
+			_text.relative = false;
+			_text.color = color;
+			_text.centerOrigin();
+			_over = over;
+			_color = color;
+			setHitbox(_text.width, _text.height);
 			this.callback = callback;
-			super(x, y);
-			
+			super(x, y, _text);
+			super.centerOrigin();
 			
 		}
 		
@@ -59,20 +65,21 @@ package net.flashpunk.utils
 				{
 					if(graphic != _down || _downChanged)
 					{
-						graphic = down;
+						graphic = new Graphiclist(_text,_down);
 						_downChanged = false;
 					}
 				}
 				else if(graphic != _hover || _hoverChanged)
 				{
-					 graphic = hover;
+					 graphic = new Graphiclist(_text,_hover);
 					_hoverChanged = false;
+					_text.color = _over;
 				}
 			}
 			else if(graphic != _normal || _normalChanged)
 			{
-				
-				graphic = normal
+				_text.color = _color;
+				graphic = new Graphiclist(_text,normal);
 				_normalChanged = false;
 			}
 		}
