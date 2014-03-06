@@ -30,7 +30,7 @@ package net.flashpunk.utils
 		private var _over:uint;
 		private var _color:uint;
 		
-		public function Button(text:String,color:uint=0xffffff,over:uint=0xd8d8d8,x:Number=0, y:Number=0, width:int=0, height:int=0, callback:Function=null)
+		public function Button(text:String,callback:Function=null,x:Number=0, y:Number=0, width:int=0, height:int=0,color:uint=0xffffff,over:uint=0xd8d8d8)
 		{
 			
 			_text = new Text(text, x, y);
