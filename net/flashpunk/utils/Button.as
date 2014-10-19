@@ -59,7 +59,7 @@ package net.flashpunk.utils
 			
 			super.update();
 			
-			if(collidePoint(x, y, Input.mouseX, Input.mouseY))
+			if(visible && collidePoint(x, y, Input.mouseX, Input.mouseY))
 			{
 				if(Input.mousePressed)
 				{
@@ -87,7 +87,7 @@ package net.flashpunk.utils
 		private function onMouseUp(e:MouseEvent=null):void
 		{
 			if(!shouldCall || (callback == null)) return;
-			if(collidePoint(x, y, Input.mouseX, Input.mouseY)) callback();
+			if(visible && collidePoint(x, y, Input.mouseX, Input.mouseY)) callback();
 		}
 		
 		override public function removed():void
@@ -119,5 +119,16 @@ package net.flashpunk.utils
 		public function get normal():Graphic{ return _normal; }
 		public function get hover():Graphic{ return _hover; }
 		public function get down():Graphic{ return _down; }
+
+        public function setX(val:Number):void {
+            this.x = val;
+            _text.x = val;
+        }
+
+        public function setY(val:Number):void{
+            this.y = val;
+            _text.y = val;
+        }
+
 	}
 }

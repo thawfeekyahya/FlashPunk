@@ -101,6 +101,10 @@ package net.flashpunk.graphics
 			_bufferRect = _buffer.rect;
 			_bitmap.bitmapData = _buffer;
 		}
+
+        public function getBuffer():BitmapData {
+            return this._buffer;
+        }
 		
 		/** @private Renders the image. */
 		override public function render(target:BitmapData, point:Point, camera:Point):void
@@ -457,6 +461,13 @@ package net.flashpunk.graphics
 		 * True if the image is locked.
 		 */
 		public function get locked():Boolean { return _locked; }
+
+        /**
+         * Get source bitmapData
+         */
+        public function getSrcBitmapData():BitmapData {
+            return _source;
+        }
 		
 		// Locking
 		/** @private */ protected var _locked:Boolean = false;

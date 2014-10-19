@@ -98,7 +98,7 @@
 		public static var camera:Point = new Point;
 		
 		/**
-		 * Global Tweener for tweening values across multiple worlds.
+		 * Global Tweener for tweening values across multiple screens.
 		 */
 		public static var tweener:Tweener = new Tweener;
 		

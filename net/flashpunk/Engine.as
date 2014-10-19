@@ -167,7 +167,7 @@
 			// enable input
 			Input.enable();
 			
-			// switch worlds
+			// switch screens
 			if (FP._goto) checkWorld();
 			
 			// game start

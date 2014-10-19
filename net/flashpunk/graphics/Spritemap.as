@@ -1,6 +1,7 @@
 ﻿package net.flashpunk.graphics 
 {
-	import flash.geom.Rectangle;
+import flash.display.BitmapData;
+import flash.geom.Rectangle;
 
 	import net.flashpunk.FP;
 
@@ -60,8 +61,8 @@
 			updateBuffer();
 			active = true;
 		}
-		
-		/**
+
+        /**
 		 * Updates the spritemap's buffer.
 		 */
 		override public function updateBuffer(clearBefore:Boolean = false):void 

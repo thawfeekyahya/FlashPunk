@@ -7,7 +7,7 @@
 	
 	/**
 	 * Uses a hash grid to determine collision, faster than
-	 * using hundreds of Entities for tiled levels, etc.
+	 * using hundreds of Entities for tiled level, etc.
 	 */
 	public class Grid extends Hitbox
 	{
